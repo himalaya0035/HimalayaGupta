@@ -26,7 +26,6 @@ header{
     top:0%;
     left:0%;
     width: 100%;
-    /* background:linear-gradient(rgba(21, 182, 70, 0.5),rgba(69, 67, 172, 0.5)); */
     height: 12vh;
     transition:height 0.5s;
 }
@@ -72,10 +71,20 @@ ul li a {
     font-size:1.1em;
     transition: 0.8s;
 }
- .navbar-links:hover a,.active_links a{
+ /* .navbar-links:hover a,.active_links a{
     background:white;
     color:black;
-} 
+}  */
+@keyframes moveDown{
+    from{
+        opacity: 0.3;
+        transform:translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+  }
 /* header css ends here  */
 
 
@@ -96,6 +105,7 @@ ul li a {
     -webkit-background-clip:text;
     user-select: none;
 }
+
 .intro_page_content h2{
     font-size:5vw;
     font-weight: 500;
@@ -155,6 +165,11 @@ ul li a {
     margin-left: 5px;
     margin-right: 5px;
     margin-top:3px;
+    transition: 0.2s;
+}
+.logoName:hover{
+    background:linear-gradient(rgba(201, 198, 198, 0.5),rgba(26, 25, 25, 0.5));
+    box-shadow: 8px 4px 8px rgba(82, 81, 82, 0.6);
 }
 .logoName h1{
     font-size: 2vw;
@@ -181,7 +196,6 @@ ul li a {
 }
 /* about me section css ends here */
 
-
 #aboutme, #projects, #contactme{
     background-size: cover;
     background-position: center;
@@ -193,7 +207,8 @@ ul li a {
     justify-content: center;
     align-items:center;
     flex-direction: column;
-    background: linear-gradient(rgba(10, 138, 63, 0.5),rgba(64, 3, 87, 0.5));
+    background: linear-gradient(rgba(70, 121, 155, 0.5),rgba(116, 25, 161, 0.5));
+    /* background: linear-gradient(rgba(10, 138, 63, 0.5),rgba(64, 3, 87, 0.5)); */
 }
 .project_information h2{
     font-size:4vw;
@@ -208,7 +223,7 @@ ul li a {
     from{
         opacity: 0;
         visibility: hidden;
-        transform: translateX(-180px);
+        transform: translateX(-160px);
     }
     to {
         visibility: visible;
@@ -224,42 +239,75 @@ ul li a {
   .swiper-slide {
     background-position: left;
     background-size: cover;
-    width: 330px;
-    height: auto;
+    width: 320px;
+    height: 325px;
+    border-radius: 8px;
     background:whitesmoke;
   }
   .swiper-pagination-bullet{
       background: white;
   }
- .imgbx img{
-     height: 320px;
-     width: 330px;
- }
- .description{
-    padding:10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.desc{
-    font-family: 'Montserrat';
+/* test code here */
+.box {
+    position: relative; /* to make child elements position relative to itself */
+    width:320px;
+    height: 325px;
+    background: #000;
+    box-shadow: 0 10px 16px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    border-radius:8px;
+  }
+  .box .imgbx{
+    position: absolute;
+    top: 0;
+    left:0px;
+    width:100%;
+    height: 82%; /* takes 82% of the height from top */
+  }
+  .box .imgbx img {
+    position: absolute;
+    top:0px;
+    left:0px;
+    width:100%;
+    height:100%;
+    transition: 0.5s;
+    border-radius:8px 8px 0px 0px;
+  }
+  /* .box:hover .imgbx img {
+    opacity: 0;
+  } */
+  .box .content {
+    position: absolute;
+    bottom:0px;
+    left:0px;
+    width:100%;
+    height:18%; /* takes 14% height from bottom */
+    background-color:whitesmoke;
     color:black;
-}
-.description a{
-    text-decoration:none;
-    color:white;
-    background:black;
-    border:none;
-    border-radius: 5px;
-    padding:5px;
-    padding-left: 8px;
-    padding-right: 8px;
-}
+    transition: 0.5s;
+    overflow:hidden;
+    padding: 15px;
+    box-sizing:border-box;
+    border-radius:0px 0px 8px 8px;
+  }
+  /* .box .active_project{
+    width:100%;
+    height:100%;
+    bottom: 0px;
+    left:0px;
+    border-radius:8px 8px 8px 8px;
+  } */
+  .box .content h3 {
+    margin: 0px;
+    padding: 0px;
+    font-size: 20px;
+    line-height:32px;
+  }
+/* test code ends */ 
+/* TEST SUCCESSFULL 😀 */
 /* project section css ends here */
-
-
 #contactme{
-    background: linear-gradient(rgba(145, 9, 38, 0.5),rgba(64, 3, 87, 0.5));
+    /* background: linear-gradient(rgba(145, 9, 38, 0.5),rgba(64, 3, 87, 0.5)); */
+    background: linear-gradient(rgba(70, 121, 155, 0.5),rgba(116, 25, 161, 0.5));
 }
 @media screen and (max-width:799px){
     .navbar{
@@ -285,7 +333,7 @@ ul li a {
     }
     .myinfo p{
         font-size: 4vw;
-        margin-left: 10px;
+        margin-left: 15px;
         margin-right: 10px;
         font-family: 'Montserrat';
         text-align:left;
@@ -299,19 +347,34 @@ ul li a {
         margin-left: 10px;
         user-select: none;
     }
+    .myinfo h1{
+        margin-left:15px;
+    }
     .logoName{
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 8px;
         background:linear-gradient(rgba(95, 94, 94, 0.5),rgba(110, 110, 110, 0.5));
         margin-left: 10px;
         margin-right: 10px;
         margin-top:3px;
+        transition: 0.25s;
     }
     .logoName h1{
         font-size: 6vw;
     }
+    @keyframes moveUp{
+        from{
+            opacity: 0;
+            padding:2px;
+            visibility: hidden;
+        }
+        to {
+            visibility: visible;
+            padding: 8px;
+            opacity: 1;
+        }
+      }
 }
 @media screen and (max-width:500px){
     .project_information h2{
