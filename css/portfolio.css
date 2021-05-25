@@ -2,8 +2,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Overpass&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 html{
-    scroll-behavior: smooth;
-    scroll-snap-type:y mandatory;
+/*     scroll-behavior: smooth;
+    scroll-snap-type:y mandatory; */
     overflow-y:scroll;
     /* Yay !!!!! 😀😀😀 */
 }
@@ -16,7 +16,7 @@ body{
 }
 section {
     height: 100vh;
-    scroll-snap-align: start;
+/*     scroll-snap-align: start; */
 }
 /* basic setting done */
 
